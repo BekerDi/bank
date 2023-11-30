@@ -1,6 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System;
+internal class BankAccountCreator
+{
+    private Hashtable _hashtable;
+    public int CreateAccount()
+    {
+        BankAccount account = new BankAccount();
+        _hashtable.Add(account.AccountNumber, account);
+        return account.AccountNumber;
+    }
+    public void DeleteAccount( int accountNumber)
+    {
+        _hashtable.Remove(accountNumber);
+    }
+    public BankAccountCreator(Hashtable hashtable)
+    {
+        this._hashtable = hashtable;
+    }
+
+
+
+}
 
 class BankTransaction
 {
